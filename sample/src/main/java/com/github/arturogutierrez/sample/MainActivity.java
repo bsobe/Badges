@@ -1,30 +1,25 @@
 package com.github.arturogutierrez.sample;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.github.arturogutierrez.Badges;
 import com.github.arturogutierrez.BadgesNotSupportedException;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-
-
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
-    @InjectView(R.id.text_badge_count)
     EditText badgeCountText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        badgeCountText = findViewById(R.id.text_badge_count);
     }
 
     public void updateButtonPressed(View v) {

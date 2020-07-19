@@ -1,21 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '20.0.0'
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 19
+        minSdkVersion 16
+        targetSdkVersion 30
         versionName project.VERSION_NAME
         versionCode Integer.parseInt(project.VERSION_CODE)
     }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:19.+'
-
-    compile 'com.jakewharton:butterknife:5.0.+'
-
-    compile project(':badges')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation project(':badges')
 }
